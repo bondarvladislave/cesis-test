@@ -23,13 +23,37 @@ $(document).ready(function() {
 		}
 	})
 
-	//Фиолетовая картинка при фокусе на инпуты.
-	$('.form__input input, .footer__input input').focus(function() {
+	//Фиолетовая картинка при фокусе и ховере на инпуты.
+	$('.form__input input').focus(function() {
 		$(this).parent().children('div').addClass('active')
 	})	
-	$('.form__input input, .footer__input input').focusout(function() {
+
+	$('.form__input input').mouseover(function() {
+		$(this).parent().children('div').addClass('active')
+	})	
+
+	$('.form__input input').mouseout(function() {
+		$(this).parent().children('div').removeClass('active')
+	})	
+
+	$('.form__input input').focusout(function() {
 		$(this).parent().children('div').removeClass('active')
 	})
+
+	$('.footer__input input').focus(function() {
+		$(this).parent().children('button').addClass('active')
+	})	
+	$('.footer__input input').focusout(function() {
+		$(this).parent().children('button').removeClass('active')
+	})
+
+	$('.footer__input input').mouseover(function() {
+		$(this).parent().children('button').addClass('active')
+	})	
+
+	$('.footer__input input').mouseout(function() {
+		$(this).parent().children('button').removeClass('active')
+	})	
 
 	//Черный текст на label если его чекбокс checked
 	$('.form__checkbox input').change(function() {
@@ -41,10 +65,12 @@ $(document).ready(function() {
 		}
 	})
 
-//плавный скролл по якорям
   $('a').click( function() { 
   	var target = $(this).attr('href')
     $('html, body').animate({ scrollTop: $(target).offset().top }, 800);
   });
+
+
+
 
 })

@@ -1029,6 +1029,10 @@ h2 {
       color: #2a2d2e;
       font-weight: 400;
       position: relative; }
+      .footer__input input:focus {
+        border-color: #7443ff; }
+    .footer__input:hover input {
+      border-color: #7443ff; }
     .footer__input button {
       background-color: #fff;
       position: absolute;
